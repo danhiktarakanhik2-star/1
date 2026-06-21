@@ -1,0 +1,212 @@
+﻿
+Config: general (ALT).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 108 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 108 ms
+
+Config: general (ALT10).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 137 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 137 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 108 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 108 ms
+
+Config: general (ALT11).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 98 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 110 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 109 ms
+
+Config: general (ALT2).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 90 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 93 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 108 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 108 ms
+
+Config: general (ALT3).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 109 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 108 ms
+
+Config: general (ALT4).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 137 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 137 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 93 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 109 ms
+
+Config: general (ALT5).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 91 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 109 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+
+Config: general (ALT6).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 137 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 91 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 90 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 95 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 138 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 134 ms
+
+Config: general (ALT7).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 93 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 91 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+
+Config: general (ALT8).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 137 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 91 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 94 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 136 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 136 ms
+
+Config: general (ALT9).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 139 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 93 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 93 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 134 ms
+
+Config: general (FAKE TLS AUTO ALT).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 140 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 90 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 94 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 134 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 134 ms
+
+Config: general (FAKE TLS AUTO ALT2).bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 140 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 94 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 93 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 134 ms
+
+Config: general (FAKE TLS AUTO ALT3).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 141 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 141 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 93 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 90 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 93 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+
+Config: general (FAKE TLS AUTO).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 138 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 149 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 101 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 134 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+
+Config: general (SIMPLE FAKE ALT).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 142 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 140 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 95 ms
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+
+Config: general (SIMPLE FAKE ALT2).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 142 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 141 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 91 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 134 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+
+Config: general (SIMPLE FAKE).bat (Type: standard)
+  Roblox Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 144 ms
+  Roblox Auth : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 141 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 96 ms
+  Discord Gateway : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 94 ms
+  Discord CDN : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 92 ms
+  YouTube Web : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 135 ms
+  YouTube Video : HTTP:OK    TLS1.2:OK    TLS1.3:OK    | Ping: 134 ms
+
+Config: general.bat (Type: standard)
+  UNKNOWN : HTTP:ERROR | Ping: Timeout
+  Roblox Auth : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 142 ms
+  Roblox CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: Timeout
+  Discord Main : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 95 ms
+  Discord Gateway : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 94 ms
+  Discord CDN : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 92 ms
+  YouTube Web : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 136 ms
+  YouTube Video : HTTP:ERROR TLS1.2:ERROR TLS1.3:ERROR | Ping: 135 ms
+
+=== ANALYTICS ===
+general (ALT11).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (ALT3).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (FAKE TLS AUTO).bat : HTTP OK: 15, ERR: 7, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT6).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT5).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (SIMPLE FAKE ALT).bat : HTTP OK: 15, ERR: 7, UNSUP: 0, Ping OK: 6, Fail: 2
+general (FAKE TLS AUTO ALT3).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (ALT10).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (FAKE TLS AUTO ALT).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general.bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT7).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT4).bat : HTTP OK: 15, ERR: 7, UNSUP: 0, Ping OK: 6, Fail: 2
+general (FAKE TLS AUTO ALT2).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT2).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT8).bat : HTTP OK: 0, ERR: 22, UNSUP: 0, Ping OK: 6, Fail: 2
+general (ALT9).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (ALT).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (SIMPLE FAKE).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+general (SIMPLE FAKE ALT2).bat : HTTP OK: 21, ERR: 3, UNSUP: 0, Ping OK: 7, Fail: 1
+Best strategy: general (ALT11).bat
