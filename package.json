@@ -1,0 +1,16 @@
+{
+  "name": "fortress-arena",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Браузерный 3D-шутер в духе Team Fortress 2: 9 классов, боты, турели, ракетные прыжки, захват точек",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm run test:game && npm run test:client",
+    "test:game": "node tf2/test/smoke.mjs",
+    "test:client": "node --import ./tf2/test/register-hooks.mjs ./tf2/test/client.mjs"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}
