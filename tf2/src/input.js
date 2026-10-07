@@ -18,6 +18,9 @@ export class Controls {
     this.yaw = 0;
     this.pitch = 0;
     this.locked = false;
+    // Запасной режим: если браузер/iframe запрещает захват курсора,
+    // обзор работает по обычному движению мыши над окном.
+    this.fallbackLook = false;
     this.enabled = true;
     this.onAction = opts.onAction || (() => {});
     this.lastWeapon = 1;
@@ -42,7 +45,7 @@ export class Controls {
     };
     this._onMouseDown = (e) => {
       if (!this.enabled) return;
-      if (document.pointerLockElement !== this.canvas) { this.requestLock(); return; }
+      if (document.pointerLockElement !== this.canvas && !this.fallbackLook) { this.requestLock(); return; }
       if (e.button === 0) { this.mouse.left = true; this.mouse.leftClicked = true; }
       if (e.button === 2) this.mouse.right = true;
       if (e.button === 1) this.onAction('zoomAlt');
@@ -52,17 +55,21 @@ export class Controls {
       if (e.button === 2) this.mouse.right = false;
     };
     this._onMouseMove = (e) => {
-      if (!this.locked || !this.enabled) return;
-      this.yaw -= e.movementX * this.sensitivity;
-      this.pitch = clamp(this.pitch - e.movementY * this.sensitivity, -1.5, 1.5);
+      if (!this.enabled) return;
+      if (!this.locked && !this.fallbackLook) return;
+      const mx = e.movementX ?? 0;
+      const my = e.movementY ?? 0;
+      this.yaw -= mx * this.sensitivity;
+      this.pitch = clamp(this.pitch - my * this.sensitivity, -1.5, 1.5);
     };
     this._onWheel = (e) => {
-      if (!this.locked) return;
+      if (!this.locked && !this.fallbackLook) return;
       e.preventDefault();
       this.mouse.wheel += Math.sign(e.deltaY);
     };
     this._onLockChange = () => {
       this.locked = document.pointerLockElement === this.canvas;
+      if (this.locked) this.fallbackLook = false; // захват получен — запасной режим не нужен
       if (!this.locked) {
         this.keys.clear();
         this.mouse.left = this.mouse.right = false;
@@ -96,7 +103,12 @@ export class Controls {
   }
 
   requestLock() {
-    if (this.canvas.requestPointerLock) this.canvas.requestPointerLock();
+    if (typeof this.canvas.requestPointerLock !== 'function') return Promise.reject(new Error('unsupported'));
+    try {
+      const res = this.canvas.requestPointerLock();
+      if (res && typeof res.catch === 'function') return res.catch(() => {});
+    } catch (e) { /* старые браузеры */ }
+    return Promise.resolve();
   }
 
   exitLock() {

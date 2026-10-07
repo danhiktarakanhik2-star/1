@@ -134,6 +134,44 @@ section('Управление и стрельба');
   ok(true, 'стрельба не ломает цикл');
 }
 
+section('Запасной режим мыши (без захвата курсора)');
+{
+  const local = game.world.getPlayer(game.localId);
+  game.resume();
+  frames(5);
+  // имитируем браузер, который запрещает pointer lock (iframe без разрешения)
+  game.controls.locked = false;
+  game.controls.fallbackLook = true;
+  const yaw0 = local.yaw;
+  for (let i = 0; i < 25; i++) win.dispatch('mousemove', { movementX: -25, movementY: 0 });
+  frames(5);
+  ok(Math.abs(local.yaw - yaw0) > 0.15, `без захвата курсора обзор всё равно работает (Δ=${(local.yaw - yaw0).toFixed(2)})`);
+  const pitch0 = local.pitch;
+  for (let i = 0; i < 10; i++) win.dispatch('mousemove', { movementX: 0, movementY: 20 });
+  frames(5);
+  ok(local.pitch < pitch0, 'вертикальный обзор в запасном режиме');
+
+  // клик в запасном режиме = выстрел, а не запрос захвата
+  const ammoBefore = local.ammo.rocketlauncher ?? 0;
+  win.dispatch('mousedown', { button: 0 });
+  frames(30);
+  win.dispatch('mouseup', { button: 0 });
+  ok(local.ammo.rocketlauncher === undefined || local.ammo.rocketlauncher < ammoBefore || game.world.projectiles.length > 0,
+    'в запасном режиме ЛКМ стреляет');
+
+  // потеря захвата вне запасного режима ставит на паузу
+  game.controls.fallbackLook = false;
+  game.controls.locked = false;
+  documentStub.pointerLockElement = null;
+  documentStub.dispatch('pointerlockchange');
+  ok(game.state === 'paused', 'без запасного режима потеря захвата ставит на паузу');
+  game.resume();
+  frames(10);
+  ok(game.state === 'playing', 'продолжение после паузы');
+  game.controls.locked = true;
+  game.controls.fallbackLook = false;
+}
+
 section('HUD для всех классов');
 {
   const local = game.world.getPlayer(game.localId);

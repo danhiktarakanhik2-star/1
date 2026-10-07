@@ -254,7 +254,7 @@ class Game {
     this.state = 'playing';
     this.controls.enabled = true;
     this.controls.syncFrom(local);
-    this.controls.requestLock();
+    this.requestLockSmart();
     this.lastFrame = performance.now();
   }
 
@@ -269,8 +269,23 @@ class Game {
     $('scoreboard').classList.add('hidden');
   }
 
+  // Захват курсора, а если браузер его запрещает (например, iframe без
+  // разрешения pointer-lock) — запасной режим обзора обычной мышью.
+  requestLockSmart() {
+    this.controls.fallbackLook = false;
+    this.controls.requestLock();
+    clearTimeout(this._lockTimer);
+    this._lockTimer = setTimeout(() => {
+      if (this.state === 'playing' && !this.controls.locked) {
+        this.controls.fallbackLook = true;
+        this.hud.notify('Курсор не захвачен: обзор работает обычным движением мыши', '', 6);
+      }
+    }, 800);
+  }
+
   pause() {
     if (this.state !== 'playing') return;
+    this.controls.fallbackLook = false;
     this.state = 'paused';
     $('pause').classList.remove('hidden');
     this.controls.exitLock();
@@ -285,7 +300,7 @@ class Game {
     this.lastFrame = performance.now();
     if (this.controls.once) this.controls.once.clear();
     this.controls.mouse.leftClicked = false;
-    this.controls.requestLock();
+    this.requestLockSmart();
   }
 
   showClassSelect(force) {
@@ -317,7 +332,7 @@ class Game {
       return;
     }
     if (action === 'unlocked') {
-      if (this.state === 'playing') this.pause();
+      if (this.state === 'playing' && !this.controls.fallbackLook) this.pause();
       return;
     }
     if (action === 'scoreboard') {
