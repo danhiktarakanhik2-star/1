@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fortress Arena — браузерный шутер в духе Team Fortress 2</title>
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "../vendor/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- ======================= HUD ======================= -->
+<div id="hud" class="hidden">
+  <div class="hud-top">
+    <div class="score red" id="score-red">0</div>
+    <div class="mid">
+      <div id="timer">8:00</div>
+      <div class="caps" id="cap-status"></div>
+    </div>
+    <div class="score blu" id="score-blu">0</div>
+  </div>
+
+  <div class="notify" id="notify"></div>
+  <div class="killfeed" id="killfeed"></div>
+
+  <div class="crosshair-wrap">
+    <div class="crosshair" id="crosshair"><span></span><span></span><span></span><span></span><i></i></div>
+    <div class="hitmarker" id="hitmarker"></div>
+    <div class="charge" id="charge-wrap"><div id="charge-bar"></div></div>
+  </div>
+
+  <div class="hud-bottom-left">
+    <div class="health" id="health-panel">
+      <div class="hp-num" id="hp">200</div>
+      <div class="hp-bar"><div id="hp-fill"></div></div>
+      <div class="cls" id="class-label">Солдат</div>
+      <div class="heal-target" id="heal-target"></div>
+    </div>
+  </div>
+
+  <div class="hud-bottom-right">
+    <div class="weapon" id="weapon-panel">
+      <div class="ammo"><span id="ammo">4</span><small id="ammo-max">/4</small></div>
+      <div class="wname" id="weapon-name">Ракетница</div>
+      <div class="spin" id="spin-wrap"><div id="spin-bar"></div></div>
+    </div>
+    <div class="ability" id="ability-panel">
+      <div class="meter" id="uber-wrap"><div id="uber-bar"></div><label id="uber-label">УБЕР</label></div>
+      <div class="meter cloak" id="cloak-wrap"><div id="cloak-bar"></div><label id="cloak-label">НЕВИДИМОСТЬ</label></div>
+      <div class="buildmenu" id="build-menu"></div>
+    </div>
+  </div>
+
+  <div class="build-hint hidden" id="build-hint">ЛКМ — поставить постройку · X — отмена</div>
+  <div class="vignette" id="vignette"></div>
+  <div class="flash" id="flash"></div>
+  <div class="damage-dirs" id="damage-dirs"></div>
+</div>
+
+<!-- ======================= МЕНЮ ======================= -->
+<div id="menu" class="overlay">
+  <div class="panel menu-panel">
+    <h1>FORTRESS<span>ARENA</span></h1>
+    <p class="sub">Шутер в духе Team Fortress 2: 9 классов, боты, турели, ракетные прыжки и захват точек.</p>
+
+    <div class="row">
+      <div class="field">
+        <label>Команда</label>
+        <div class="teams">
+          <button class="team-btn red" data-team="0">RED</button>
+          <button class="team-btn blu" data-team="1">BLU</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Карта</label>
+        <select id="map-select"></select>
+      </div>
+      <div class="field">
+        <label>Ботов в команде</label>
+        <select id="bots-select">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Сложность</label>
+        <select id="skill-select"></select>
+      </div>
+    </div>
+
+    <h2>Класс</h2>
+    <div class="classes" id="class-grid"></div>
+
+    <div class="row bottom">
+      <button class="big" id="play-btn">Играть</button>
+      <button class="ghost" id="settings-btn">Настройки</button>
+    </div>
+    <p class="hint">
+      WASD — движение · Мышь — обзор · ЛКМ — огонь · ПКМ — вторичное (прицел/поджиг/лечение) ·
+      Пробел — прыжок · Shift — присесть · R — перезарядка · 1/2/3 — оружие · Q — прошлое оружие ·
+      G — детонация липучки · E — убер · C — невидимость · V — маскировка · 4/5/6 — постройка (инженер) ·
+      F — поставить · X — отмена · Tab — счёт
+    </p>
+  </div>
+</div>
+
+<!-- ======================= ПАУЗА ======================= -->
+<div id="pause" class="overlay hidden">
+  <div class="panel small">
+    <h2>Пауза</h2>
+    <button class="big" id="resume-btn">Продолжить</button>
+    <button class="ghost" id="pause-class-btn">Сменить класс</button>
+    <button class="ghost" id="pause-settings-btn">Настройки</button>
+    <button class="ghost danger" id="leave-btn">Выйти в меню</button>
+  </div>
+</div>
+
+<!-- ======================= СМЕНА КЛАССА ======================= -->
+<div id="classselect" class="overlay hidden">
+  <div class="panel">
+    <h2>Выбор класса</h2>
+    <p class="sub" id="respawn-note">Возрождение через 4.0 с</p>
+    <div class="classes" id="class-grid-2"></div>
+    <button class="big" id="class-close-btn">Возродиться</button>
+  </div>
+</div>
+
+<!-- ======================= НАСТРОЙКИ ======================= -->
+<div id="settings" class="overlay hidden">
+  <div class="panel small">
+    <h2>Настройки</h2>
+    <div class="field">
+      <label>Чувствительность мыши: <span id="sens-val">2.2</span></label>
+      <input type="range" id="sens" min="0.5" max="6" step="0.1" value="2.2" />
+    </div>
+    <div class="field">
+      <label>Громкость: <span id="vol-val">70</span>%</label>
+      <input type="range" id="vol" min="0" max="100" step="1" value="70" />
+    </div>
+    <div class="field">
+      <label><input type="checkbox" id="shadows" checked /> Тени (выключите для слабых ПК)</label>
+    </div>
+    <div class="field">
+      <label><input type="checkbox" id="fps-counter" /> Показывать FPS</label>
+    </div>
+    <button class="big" id="settings-close">Готово</button>
+  </div>
+</div>
+
+<!-- ======================= ИТОГИ ======================= -->
+<div id="roundend" class="overlay hidden">
+  <div class="panel small">
+    <h2 id="round-title">Победа</h2>
+    <div class="final-score"><span class="red" id="final-red">0</span> : <span class="blu" id="final-blu">0</span></div>
+    <table class="board" id="final-board"></table>
+    <button class="big" id="again-btn">Ещё раунд</button>
+    <button class="ghost" id="menu-btn">В меню</button>
+  </div>
+</div>
+
+<!-- ======================= СЧЁТ (TAB) ======================= -->
+<div id="scoreboard" class="overlay hidden">
+  <div class="panel wide">
+    <h2>Счёт</h2>
+    <div class="board-wrap">
+      <table class="board" id="scoreboard-table"></table>
+    </div>
+  </div>
+</div>
+
+<div id="fps" class="fps hidden"></div>
+<div id="loading" class="overlay"><div class="panel small"><h2>Загрузка…</h2></div></div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
